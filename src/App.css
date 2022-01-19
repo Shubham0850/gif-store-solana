@@ -1,8 +1,17 @@
 .App {
   height: 100vh;
   background-color: #1a202c;
-  overflow: scroll;
+  overflow-y: scroll;
   text-align: center;
+}
+
+.btn{
+  padding: 15px 25px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
 .container {
