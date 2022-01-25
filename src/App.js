@@ -1,4 +1,4 @@
-import twitterLogo from "./assets/twitter-logo.svg";
+import ethGif from "./assets/eth.gif";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
@@ -26,15 +26,6 @@ const opts = {
   preflightCommitment: "processed",
 };
 
-// Constants
-const TWITTER_HANDLE = "_buildspace";
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-// const TEST_GIFS = [
-//   "https://i.giphy.com/media/eIG0HfouRQJQr1wBzz/giphy.webp",
-//   "https://media3.giphy.com/media/L71a8LW2UrKwPaWNYM/giphy.gif?cid=ecf05e47rr9qizx2msjucl1xyvuu47d7kf25tqt2lvo024uo&rid=giphy.gif&ct=g",
-//   "https://media4.giphy.com/media/AeFmQjHMtEySooOc8K/giphy.gif?cid=ecf05e47qdzhdma2y3ugn32lkgi972z9mpfzocjj6z1ro4ec&rid=giphy.gif&ct=g",
-//   "https://i.giphy.com/media/PAqjdPkJLDsmBRSYUp/giphy.webp",
-// ];
 
 const App = () => {
   const [walletAdrs, setWalletAdrs] = useState(null);
@@ -179,7 +170,8 @@ const App = () => {
     <div className="App">
       <div className={walletAdrs ? "authed-container" : "container"}>
         <div className="header-container">
-          <p className="header">🖼 GIF Portal</p>
+          <img src={ethGif} alt="gif" className="gif"/>
+          <p className="header">Web 3.0 GIF Portal</p>
           <p className="sub-text">
             View your GIF collection in the metaverse ✨
           </p>
@@ -206,6 +198,7 @@ const App = () => {
                   value={inpValue}
                   onChange={onInpChange}
                   placeholder="Enter gif link!"
+                  className="inp"
                 />
                 <button type="submit" className="cta-button submit-gif-button">
                   Submit
@@ -231,15 +224,7 @@ const App = () => {
             </div>
           )}
         </div>
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
-        </div>
+        
       </div>
     </div>
   );
