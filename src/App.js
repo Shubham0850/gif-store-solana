@@ -175,7 +175,7 @@ const App = () => {
           <p className="sub-text">
             View your GIF collection in the metaverse ✨
           </p>
-          <p className="sub-text">
+          <p className="sub-text add-text">
             Wallet Address: 0x{walletAdrs}
           </p>
           {!walletAdrs && (
@@ -213,10 +213,10 @@ const App = () => {
                   Do One-Time Initialization For GIF Program Account
                 </button>
               ) : (
-                <div className="gif-grid">
+                <div className="gif-box">
                   {gifList.map((gif) => (
                     <div className="gif-item" key={gif}>
-                      <img src={gif.gifLink} alt={gif} />
+                      <img src={gif.gifLink} alt={gif} className="gif-img" />
                     </div>
                   ))}
                 </div>
@@ -226,6 +226,8 @@ const App = () => {
         </div>
         
       </div>
+
+      <p className="footer">Developed by <a href="https://www.shubhamraj.live/">Shubham Raj</a></p>
     </div>
   );
 };
